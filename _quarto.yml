@@ -13,9 +13,11 @@ website:
     
 format:
   html:
-    theme: sandstone
+    theme: lumen
     toc: false
-
+    code-fold: true
+    code-summary: "Click to view code"
 editor:
   mode: source
+  
   
