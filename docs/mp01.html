@@ -59,7 +59,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
@@ -75,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bb535823c3ca807d85e65cebd9f1052e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-466483732dcb0cea7139c1eae81929d3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -127,7 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -140,7 +139,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">STA 9750 Submission Material</span>
     </a>
   </div>
-        <div class="quarto-navbar-tools tools-end">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mini-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mini Projects</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-projects">    
+        <li>
+    <a class="dropdown-item" href="./mp01.html">
+ <span class="dropdown-text">MP01 — Data Wrangling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mp02.html">
+ <span class="dropdown-text">MP02 — YIMBY (Backyards)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://michael-weylandt.com/STA9750/" target="_blank"> 
+<span class="menu-text">Course Page</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Talha-Zaheer1/STA9750-2025-FALL"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -148,8 +184,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#gourmet-cheeseburgers-across-the-globe-exploring-the-most-popular-programming-on-netflix" id="toc-gourmet-cheeseburgers-across-the-globe-exploring-the-most-popular-programming-on-netflix" class="nav-link active" data-scroll-target="#gourmet-cheeseburgers-across-the-globe-exploring-the-most-popular-programming-on-netflix">Gourmet Cheeseburgers Across the Globe: Exploring the Most Popular Programming on Netflix</a></li>
+  <li><a href="#executive-summary" id="toc-executive-summary" class="nav-link" data-scroll-target="#executive-summary">Executive Summary</a></li>
+  <li><a href="#data-acquisition" id="toc-data-acquisition" class="nav-link" data-scroll-target="#data-acquisition">Data Acquisition</a></li>
+  <li><a href="#data-import-and-cleaning" id="toc-data-import-and-cleaning" class="nav-link" data-scroll-target="#data-import-and-cleaning">Data import and cleaning</a></li>
+  <li><a href="#task-4-exploratory-questions" id="toc-task-4-exploratory-questions" class="nav-link" data-scroll-target="#task-4-exploratory-questions">Task 4: Exploratory Questions</a>
+  <ul class="collapse">
+  <li><a href="#how-many-different-countries-does-netflix-operate-in-you-can-use-the-viewing-history-as-a-proxy-for-countries-in-which-netflix-operates." id="toc-how-many-different-countries-does-netflix-operate-in-you-can-use-the-viewing-history-as-a-proxy-for-countries-in-which-netflix-operates." class="nav-link" data-scroll-target="#how-many-different-countries-does-netflix-operate-in-you-can-use-the-viewing-history-as-a-proxy-for-countries-in-which-netflix-operates.">1.How many different countries does Netflix operate in? (You can use the viewing history as a proxy for countries in which Netflix operates.)</a></li>
+  <li><a href="#which-non-english-language-film-has-spent-the-most-cumulative-weeks-in-the-global-top-10-how-many-weeks-did-it-spend" id="toc-which-non-english-language-film-has-spent-the-most-cumulative-weeks-in-the-global-top-10-how-many-weeks-did-it-spend" class="nav-link" data-scroll-target="#which-non-english-language-film-has-spent-the-most-cumulative-weeks-in-the-global-top-10-how-many-weeks-did-it-spend">2.Which non-English-language film has spent the most cumulative weeks in the global top 10? How many weeks did it spend?</a></li>
+  <li><a href="#what-is-the-longest-film-english-or-non-english-to-have-ever-appeared-in-the-netflix-global-top-10-how-long-is-it-in-minutes" id="toc-what-is-the-longest-film-english-or-non-english-to-have-ever-appeared-in-the-netflix-global-top-10-how-long-is-it-in-minutes" class="nav-link" data-scroll-target="#what-is-the-longest-film-english-or-non-english-to-have-ever-appeared-in-the-netflix-global-top-10-how-long-is-it-in-minutes">3.What is the longest film (English or non-English) to have ever appeared in the Netflix global Top 10? How long is it in minutes?</a></li>
+  <li><a href="#for-each-of-the-four-categories-what-program-has-the-most-total-hours-of-global-viewership" id="toc-for-each-of-the-four-categories-what-program-has-the-most-total-hours-of-global-viewership" class="nav-link" data-scroll-target="#for-each-of-the-four-categories-what-program-has-the-most-total-hours-of-global-viewership">4.For each of the four categories, what program has the most total hours of global viewership?</a></li>
+  <li><a href="#which-tv-show-had-the-longest-run-in-a-countrys-top-10-how-long-was-this-run-and-in-what-country-did-it-occur" id="toc-which-tv-show-had-the-longest-run-in-a-countrys-top-10-how-long-was-this-run-and-in-what-country-did-it-occur" class="nav-link" data-scroll-target="#which-tv-show-had-the-longest-run-in-a-countrys-top-10-how-long-was-this-run-and-in-what-country-did-it-occur">5.Which TV show had the longest run in a country’s Top 10? How long was this run and in what country did it occur?</a></li>
+  <li><a href="#netflix-provides-over-200-weeks-of-service-history-for-all-but-one-country-in-our-data-set.-which-country-is-this-and-when-did-netflix-cease-operations-in-that-country" id="toc-netflix-provides-over-200-weeks-of-service-history-for-all-but-one-country-in-our-data-set.-which-country-is-this-and-when-did-netflix-cease-operations-in-that-country" class="nav-link" data-scroll-target="#netflix-provides-over-200-weeks-of-service-history-for-all-but-one-country-in-our-data-set.-which-country-is-this-and-when-did-netflix-cease-operations-in-that-country">6.Netflix provides over 200 weeks of service history for all but one country in our data set. Which country is this and when did Netflix cease operations in that country?</a></li>
+  <li><a href="#what-is-the-total-viewership-of-the-tv-show-squid-game-note-that-there-are-three-seasons-total-and-we-are-looking-for-the-total-number-of-hours-watched-across-all-seasons." id="toc-what-is-the-total-viewership-of-the-tv-show-squid-game-note-that-there-are-three-seasons-total-and-we-are-looking-for-the-total-number-of-hours-watched-across-all-seasons." class="nav-link" data-scroll-target="#what-is-the-total-viewership-of-the-tv-show-squid-game-note-that-there-are-three-seasons-total-and-we-are-looking-for-the-total-number-of-hours-watched-across-all-seasons.">7.What is the total viewership of the TV show Squid Game? Note that there are three seasons total and we are looking for the total number of hours watched across all seasons.</a></li>
+  <li><a href="#the-movie-red-notice-has-a-runtime-of-1-hour-and-58-minutes.-approximately-how-many-views-did-it-receive-in-2021-note-that-netflix-does-not-provide-the-weekly_views-values-that-far-back-in-the-past-but-you-can-compute-it-yourself-using-the-total-view-time-and-the-runtime." id="toc-the-movie-red-notice-has-a-runtime-of-1-hour-and-58-minutes.-approximately-how-many-views-did-it-receive-in-2021-note-that-netflix-does-not-provide-the-weekly_views-values-that-far-back-in-the-past-but-you-can-compute-it-yourself-using-the-total-view-time-and-the-runtime." class="nav-link" data-scroll-target="#the-movie-red-notice-has-a-runtime-of-1-hour-and-58-minutes.-approximately-how-many-views-did-it-receive-in-2021-note-that-netflix-does-not-provide-the-weekly_views-values-that-far-back-in-the-past-but-you-can-compute-it-yourself-using-the-total-view-time-and-the-runtime.">8.The movie Red Notice has a runtime of 1 hour and 58 minutes. Approximately how many views did it receive in 2021? Note that Netflix does not provide the weekly_views values that far back in the past, but you can compute it yourself using the total view time and the runtime.</a></li>
+  <li><a href="#how-many-films-reached-number-1-in-the-us-but-did-not-originally-debut-there-that-is-find-films-that-first-appeared-on-the-top-10-chart-at-e.g.-number-4-but-then-became-more-popular-and-eventually-hit-number-1-what-is-the-most-recent-film-to-pull-this-off" id="toc-how-many-films-reached-number-1-in-the-us-but-did-not-originally-debut-there-that-is-find-films-that-first-appeared-on-the-top-10-chart-at-e.g.-number-4-but-then-became-more-popular-and-eventually-hit-number-1-what-is-the-most-recent-film-to-pull-this-off" class="nav-link" data-scroll-target="#how-many-films-reached-number-1-in-the-us-but-did-not-originally-debut-there-that-is-find-films-that-first-appeared-on-the-top-10-chart-at-e.g.-number-4-but-then-became-more-popular-and-eventually-hit-number-1-what-is-the-most-recent-film-to-pull-this-off">9.How many Films reached Number 1 in the US but did not originally debut there? That is, find films that first appeared on the Top 10 chart at, e.g., Number 4 but then became more popular and eventually hit Number 1? What is the most recent film to pull this off?</a></li>
+  <li><a href="#which-tv-showseason-hit-the-top-10-in-the-most-countries-in-its-debut-week-in-how-many-countries-did-it-chart" id="toc-which-tv-showseason-hit-the-top-10-in-the-most-countries-in-its-debut-week-in-how-many-countries-did-it-chart" class="nav-link" data-scroll-target="#which-tv-showseason-hit-the-top-10-in-the-most-countries-in-its-debut-week-in-how-many-countries-did-it-chart">10. Which TV show/season hit the top 10 in the most countries in its debut week? In how many countries did it chart?</a></li>
+  </ul></li>
+  <li><a href="#task---5-preparing-press-releases" id="toc-task---5-preparing-press-releases" class="nav-link" data-scroll-target="#task---5-preparing-press-releases">Task - 5 Preparing Press Releases</a>
+  <ul class="collapse">
+  <li><a href="#press-release-1-upcoming-season-of-stranger-things" id="toc-press-release-1-upcoming-season-of-stranger-things" class="nav-link" data-scroll-target="#press-release-1-upcoming-season-of-stranger-things">Press Release 1: Upcoming Season of Stranger Things</a></li>
+  <li><a href="#headline-netflix-gears-up-for-final-season-of-stranger-things-celebrating-its-global-legacy" id="toc-headline-netflix-gears-up-for-final-season-of-stranger-things-celebrating-its-global-legacy" class="nav-link" data-scroll-target="#headline-netflix-gears-up-for-final-season-of-stranger-things-celebrating-its-global-legacy">Headline : Netflix Gears Up for Final Season of Stranger Things, Celebrating Its Global Legacy</a></li>
+  <li><a href="#task-6-press-release-2-commercial-success-in-india" id="toc-task-6-press-release-2-commercial-success-in-india" class="nav-link" data-scroll-target="#task-6-press-release-2-commercial-success-in-india">Task 6 Press Release 2: Commercial Success in India</a></li>
+  <li><a href="#headline-netflix-india-surges-ahead-over-12-million-subscribers-fuel-explosive-growth-in-hindi-content-dominance" id="toc-headline-netflix-india-surges-ahead-over-12-million-subscribers-fuel-explosive-growth-in-hindi-content-dominance" class="nav-link" data-scroll-target="#headline-netflix-india-surges-ahead-over-12-million-subscribers-fuel-explosive-growth-in-hindi-content-dominance">Headline: Netflix India Surges Ahead: Over 12 Million Subscribers Fuel Explosive Growth in Hindi Content Dominance</a></li>
+  <li><a href="#task-7-press-release-3-squid-games-global-impact" id="toc-task-7-press-release-3-squid-games-global-impact" class="nav-link" data-scroll-target="#task-7-press-release-3-squid-games-global-impact">Task 7 Press Release 3: Squid Game’s Global Impact</a></li>
+  <li><a href="#headline-from-seoul-to-the-world---squid-game-shatters-records" id="toc-headline-from-seoul-to-the-world---squid-game-shatters-records" class="nav-link" data-scroll-target="#headline-from-seoul-to-the-world---squid-game-shatters-records">Headline: From Seoul to the World - Squid Game Shatters Records</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -184,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We downloaded data here</p>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)  <span class="co"># Includes dplyr, readr, stringr</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)         <span class="co"># For interactive tables</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)  <span class="co"># For year()</span></span>
@@ -255,7 +327,7 @@ $ cumulative_weeks_in_top_10 &lt;dbl&gt; 13, 1, 2, 1, 3, 4, 3, 1, 1, 1, 1, 1, 6,
 <h3 class="anchored" data-anchor-id="how-many-different-countries-does-netflix-operate-in-you-can-use-the-viewing-history-as-a-proxy-for-countries-in-which-netflix-operates.">1.How many different countries does Netflix operate in? (You can use the viewing history as a proxy for countries in which Netflix operates.)</h3>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>num_countries <span class="ot">&lt;-</span> COUNTRY_TOP_10 <span class="sc">|&gt;</span> <span class="fu">distinct</span>(country_name) <span class="sc">|&gt;</span><span class="fu">nrow</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
@@ -269,7 +341,7 @@ $ cumulative_weeks_in_top_10 &lt;dbl&gt; 13, 1, 2, 1, 3, 4, 3, 1, 1, 1, 1, 1, 6,
 <h3 class="anchored" data-anchor-id="what-is-the-longest-film-english-or-non-english-to-have-ever-appeared-in-the-netflix-global-top-10-how-long-is-it-in-minutes">3.What is the longest film (English or non-English) to have ever appeared in the Netflix global Top 10? How long is it in minutes?</h3>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>q4_3 <span class="ot">&lt;-</span> GLOBAL_TOP_10 <span class="sc">|&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(category, <span class="st">"Films"</span>), <span class="sc">!</span><span class="fu">is.na</span>(runtime)) <span class="sc">|&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">minutes=</span><span class="fu">round</span>(<span class="dv">60</span><span class="sc">*</span>runtime)) <span class="sc">|&gt;</span></span>
@@ -285,7 +357,7 @@ $ cumulative_weeks_in_top_10 &lt;dbl&gt; 13, 1, 2, 1, 3, 4, 3, 1, 1, 1, 1, 1, 6,
 <h3 class="anchored" data-anchor-id="for-each-of-the-four-categories-what-program-has-the-most-total-hours-of-global-viewership">4.For each of the four categories, what program has the most total hours of global viewership?</h3>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>top_by_category <span class="ot">&lt;-</span> GLOBAL_TOP_10 <span class="sc">|&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(category,show_title) <span class="sc">|&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_hours =</span> <span class="fu">sum</span>(weekly_hours_viewed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">.groups =</span> <span class="st">"drop_last"</span>) <span class="sc">|&gt;</span></span>
@@ -299,8 +371,8 @@ $ cumulative_weeks_in_top_10 &lt;dbl&gt; 13, 1, 2, 1, 3, 4, 3, 1, 1, 1, 1, 1, 6,
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">formatRound</span>(<span class="st">"Total Hours"</span>,<span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-e514e1971a87acb9892d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-e514e1971a87acb9892d">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4"],["Films (English)","Films (Non-English)","TV (English)","TV (Non-English)"],["KPop Demon Hunters","Society of the Snow","Stranger Things","Squid Game"],[523700000,235900000,2967980000,5048300000]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Category<\/th>\n      <th>Show Title<\/th>\n      <th>Total Hours<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"searching":false,"info":false,"columnDefs":[{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":3},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Category","targets":1},{"name":"Show Title","targets":2},{"name":"Total Hours","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-ae48de0655486a3fe182" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-ae48de0655486a3fe182">{"x":{"filter":"none","vertical":false,"data":[["1","2","3","4"],["Films (English)","Films (Non-English)","TV (English)","TV (Non-English)"],["KPop Demon Hunters","Society of the Snow","Stranger Things","Squid Game"],[523700000,235900000,2967980000,5048300000]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Category<\/th>\n      <th>Show Title<\/th>\n      <th>Total Hours<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"searching":false,"info":false,"columnDefs":[{"targets":3,"render":"function(data, type, row, meta) {\n    return type !== 'display' ? data : DTWidget.formatRound(data, 0, 3, \",\", \".\", null);\n  }"},{"className":"dt-right","targets":3},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Category","targets":1},{"name":"Show Title","targets":2},{"name":"Total Hours","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.columnDefs.0.render"],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -308,7 +380,7 @@ $ cumulative_weeks_in_top_10 &lt;dbl&gt; 13, 1, 2, 1, 3, 4, 3, 1, 1, 1, 1, 1, 6,
 <h3 class="anchored" data-anchor-id="which-tv-show-had-the-longest-run-in-a-countrys-top-10-how-long-was-this-run-and-in-what-country-did-it-occur">5.Which TV show had the longest run in a country’s Top 10? How long was this run and in what country did it occur?</h3>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>longest_country_run <span class="ot">&lt;-</span> COUNTRY_TOP_10 <span class="sc">|&gt;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(category, <span class="st">"^TV"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country_name, show_title) <span class="sc">|&gt;</span></span>
@@ -323,7 +395,7 @@ $ cumulative_weeks_in_top_10 &lt;dbl&gt; 13, 1, 2, 1, 3, 4, 3, 1, 1, 1, 1, 1, 6,
 <h3 class="anchored" data-anchor-id="netflix-provides-over-200-weeks-of-service-history-for-all-but-one-country-in-our-data-set.-which-country-is-this-and-when-did-netflix-cease-operations-in-that-country">6.Netflix provides over 200 weeks of service history for all but one country in our data set. Which country is this and when did Netflix cease operations in that country?</h3>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>country_weeks <span class="ot">&lt;-</span> COUNTRY_TOP_10 <span class="sc">|&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country_name) <span class="sc">|&gt;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">weeks =</span> <span class="fu">n_distinct</span>(week), <span class="at">last_week =</span> <span class="fu">max</span>(week), <span class="at">.groups=</span><span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
@@ -334,8 +406,8 @@ $ cumulative_weeks_in_top_10 &lt;dbl&gt; 13, 1, 2, 1, 3, 4, 3, 1, 1, 1, 1, 1, 6,
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">datatable</span>(<span class="at">options =</span> <span class="fu">list</span>(<span class="at">searching =</span> <span class="cn">FALSE</span>, <span class="at">info =</span> <span class="cn">FALSE</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-772cdb1e8508aacfeb57" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-772cdb1e8508aacfeb57">{"x":{"filter":"none","vertical":false,"data":[["1"],["Russia"],[35],["2022-02-27"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>country_name<\/th>\n      <th>weeks<\/th>\n      <th>last_week<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"searching":false,"info":false,"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"country_name","targets":1},{"name":"weeks","targets":2},{"name":"last_week","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-7fe5ea28be9e56d55ad4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-7fe5ea28be9e56d55ad4">{"x":{"filter":"none","vertical":false,"data":[["1"],["Russia"],[35],["2022-02-27"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>country_name<\/th>\n      <th>weeks<\/th>\n      <th>last_week<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"searching":false,"info":false,"columnDefs":[{"className":"dt-right","targets":2},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"country_name","targets":1},{"name":"weeks","targets":2},{"name":"last_week","targets":3}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>Russia, which has only 35 weeks of data.<br>
@@ -345,7 +417,7 @@ Its final week of service in our dataset is 2022-02-27, the date Netflix ceased 
 <h3 class="anchored" data-anchor-id="what-is-the-total-viewership-of-the-tv-show-squid-game-note-that-there-are-three-seasons-total-and-we-are-looking-for-the-total-number-of-hours-watched-across-all-seasons.">7.What is the total viewership of the TV show Squid Game? Note that there are three seasons total and we are looking for the total number of hours watched across all seasons.</h3>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>squid_game_hours <span class="ot">&lt;-</span> GLOBAL_TOP_10 <span class="sc">|&gt;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(show_title, <span class="fu">regex</span>(<span class="st">"^Squid Game"</span>, <span class="at">ignore_case=</span><span class="cn">TRUE</span>)),</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">str_detect</span>(category, <span class="st">"^TV"</span>)) <span class="sc">|&gt;</span></span>
@@ -359,7 +431,7 @@ Its final week of service in our dataset is 2022-02-27, the date Netflix ceased 
 <h3 class="anchored" data-anchor-id="the-movie-red-notice-has-a-runtime-of-1-hour-and-58-minutes.-approximately-how-many-views-did-it-receive-in-2021-note-that-netflix-does-not-provide-the-weekly_views-values-that-far-back-in-the-past-but-you-can-compute-it-yourself-using-the-total-view-time-and-the-runtime.">8.The movie Red Notice has a runtime of 1 hour and 58 minutes. Approximately how many views did it receive in 2021? Note that Netflix does not provide the weekly_views values that far back in the past, but you can compute it yourself using the total view time and the runtime.</h3>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>rn_runtime_hours <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">58</span><span class="sc">/</span><span class="dv">60</span>  <span class="co"># 1.9667</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>rn_2021_views <span class="ot">&lt;-</span> GLOBAL_TOP_10 <span class="sc">|&gt;</span></span>
@@ -374,7 +446,7 @@ Its final week of service in our dataset is 2022-02-27, the date Netflix ceased 
 <h3 class="anchored" data-anchor-id="how-many-films-reached-number-1-in-the-us-but-did-not-originally-debut-there-that-is-find-films-that-first-appeared-on-the-top-10-chart-at-e.g.-number-4-but-then-became-more-popular-and-eventually-hit-number-1-what-is-the-most-recent-film-to-pull-this-off">9.How many Films reached Number 1 in the US but did not originally debut there? That is, find films that first appeared on the Top 10 chart at, e.g., Number 4 but then became more popular and eventually hit Number 1? What is the most recent film to pull this off?</h3>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>us_films <span class="ot">&lt;-</span> COUNTRY_TOP_10 <span class="sc">|&gt;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country_name <span class="sc">==</span> <span class="st">"United States"</span>, <span class="fu">str_detect</span>(category, <span class="st">"^Films"</span>))</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -400,7 +472,7 @@ Its final week of service in our dataset is 2022-02-27, the date Netflix ceased 
 <h3 class="anchored" data-anchor-id="which-tv-showseason-hit-the-top-10-in-the-most-countries-in-its-debut-week-in-how-many-countries-did-it-chart">10. Which TV show/season hit the top 10 in the most countries in its debut week? In how many countries did it chart?</h3>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A show's debut week globally:</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>first_global_week <span class="ot">&lt;-</span> GLOBAL_TOP_10 <span class="sc">|&gt;</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(category, <span class="st">"^TV"</span>)) <span class="sc">|&gt;</span></span>
@@ -436,7 +508,7 @@ Its final week of service in our dataset is 2022-02-27, the date Netflix ceased 
 </div>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>st_hours <span class="ot">&lt;-</span> GLOBAL_TOP_10 <span class="sc">|&gt;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(show_title, <span class="st">"^Stranger Things"</span>), <span class="fu">str_detect</span>(category, <span class="st">"^TV"</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">total_hours =</span> <span class="fu">sum</span>(weekly_hours_viewed, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span></span>
@@ -472,7 +544,7 @@ Its final week of service in our dataset is 2022-02-27, the date Netflix ceased 
 </div>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># India-first titles (appear in India Top 10, not US)</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>india_first <span class="ot">&lt;-</span> COUNTRY_TOP_10 <span class="sc">%&gt;%</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country_name <span class="sc">==</span> <span class="st">"India"</span>) <span class="sc">%&gt;%</span></span>
@@ -514,7 +586,7 @@ Its final week of service in our dataset is 2022-02-27, the date Netflix ceased 
 </div>
 <div class="cell">
 <details class="code-fold">
-<summary>Click to view code</summary>
+<summary>Click to View Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Total Squid Game hours (all seasons)</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>total_squid_hours <span class="ot">&lt;-</span> GLOBAL_TOP_10 <span class="sc">%&gt;%</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(show_title, <span class="st">"Squid Game"</span>)) <span class="sc">%&gt;%</span></span>
