@@ -22,6 +22,8 @@ website:
             href: mp02.qmd
           - text: MP03 — Canopy of NYC
             href: mp03.qmd
+          - text: MP04 — CES project
+            href: mp04.qmd
       - text: Course Page
         href: https://michael-weylandt.com/STA9750/
         target: _blank
