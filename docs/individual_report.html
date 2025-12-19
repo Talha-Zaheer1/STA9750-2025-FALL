@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.24">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Talha Zaheer">
+
+<title>Individual Report: Is Station Ridership Higher Near Protected Lanes than Shared Lanes? – STA 9750 Submission Material</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-466483732dcb0cea7139c1eae81929d3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">STA 9750 Submission Material</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mini-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mini Projects</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mini-projects">    
+        <li>
+    <a class="dropdown-item" href="./mp01.html">
+ <span class="dropdown-text">MP01 — Data Wrangling</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mp02.html">
+ <span class="dropdown-text">MP02 — YIMBY (Backyards)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mp03.html">
+ <span class="dropdown-text">MP03 — Canopy of NYC</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mp04.html">
+ <span class="dropdown-text">MP04 — CES project</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://michael-weylandt.com/STA9750/" target="_blank"> 
+<span class="menu-text">Course Page</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Talha-Zaheer1/STA9750-2025-FALL"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#data-acquisition" id="toc-data-acquisition" class="nav-link" data-scroll-target="#data-acquisition"><span class="header-section-number">2</span> Data Acquisition</a></li>
+  <li><a href="#data-processing" id="toc-data-processing" class="nav-link" data-scroll-target="#data-processing"><span class="header-section-number">3</span> Data Processing</a></li>
+  <li><a href="#visualization-of-ridership-differences" id="toc-visualization-of-ridership-differences" class="nav-link" data-scroll-target="#visualization-of-ridership-differences"><span class="header-section-number">4</span> Visualization of Ridership Differences</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">5</span> Results</a>
+  <ul class="collapse">
+  <li><a href="#mean-median-and-distributional-differences" id="toc-mean-median-and-distributional-differences" class="nav-link" data-scroll-target="#mean-median-and-distributional-differences"><span class="header-section-number">5.1</span> Mean, Median, and Distributional Differences</a></li>
+  <li><a href="#summary-of-findings" id="toc-summary-of-findings" class="nav-link" data-scroll-target="#summary-of-findings"><span class="header-section-number">5.2</span> Summary of Findings</a></li>
+  <li><a href="#visual-interpretation-of-results" id="toc-visual-interpretation-of-results" class="nav-link" data-scroll-target="#visual-interpretation-of-results"><span class="header-section-number">5.3</span> Visual Interpretation of Results</a></li>
+  <li><a href="#why-protected-lanes-may-increase-ridership" id="toc-why-protected-lanes-may-increase-ridership" class="nav-link" data-scroll-target="#why-protected-lanes-may-increase-ridership"><span class="header-section-number">5.4</span> Why Protected Lanes May Increase Ridership</a></li>
+  <li><a href="#behavior-of-experienced-vs.-inexperienced-riders" id="toc-behavior-of-experienced-vs.-inexperienced-riders" class="nav-link" data-scroll-target="#behavior-of-experienced-vs.-inexperienced-riders"><span class="header-section-number">5.5</span> Behavior of Experienced vs.&nbsp;Inexperienced Riders</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">6</span> Conclusion</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Individual Report: Is Station Ridership Higher Near Protected Lanes than Shared Lanes?</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Talha Zaheer </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><img src="https://media.istockphoto.com/id/458880149/photo/citi-bike.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=QTCFQP5suqjzLPB6Cth6ffJUh6Q4KLaLBJIs6SxRbnM=" class="img-fluid" style="width:100.0%"></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to View Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.align =</span> <span class="st">"center"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.width =</span> <span class="dv">7</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">fig.height =</span> <span class="dv">5</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
+<p>The purpose of this report is to examine whether bike-share stations located near protected bike lanes experience higher ridership than those closest to shared bike lanes. This question is central to understanding how street infrastructure influences cycling behavior and bike-share demand.</p>
+<p>In many cities, protected lanes are intended to improve safety and comfort by physically separating riders from motor traffic. If stations near protected infrastructure consistently show stronger ridership, this would provide quantitative evidence in support of protected lane expansion.</p>
+<p>This report uses monthly Citi Bike trip data, aggregated at the station level, to compare ridership patterns between stations closest to protected and shared lanes.</p>
+</section>
+<section id="data-acquisition" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data-acquisition"><span class="header-section-number">2</span> Data Acquisition</h2>
+<p>All raw Citi Bike trip data for this project were loaded from the following files:</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Click to View Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>files <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202410-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202411-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202412-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202501-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202502-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202503-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202504-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202505-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202506-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202507-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202508-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202508-citibike-tripdata.csv.zip"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202509-citibike-tripdata.csv"</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"data/Course project/JC-202510-citibike-tripdata.csv"</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>files</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "data/Course project/JC-202410-citibike-tripdata.csv"    
+ [2] "data/Course project/JC-202411-citibike-tripdata.csv"    
+ [3] "data/Course project/JC-202412-citibike-tripdata.csv"    
+ [4] "data/Course project/JC-202501-citibike-tripdata.csv"    
+ [5] "data/Course project/JC-202502-citibike-tripdata.csv"    
+ [6] "data/Course project/JC-202503-citibike-tripdata.csv"    
+ [7] "data/Course project/JC-202504-citibike-tripdata.csv"    
+ [8] "data/Course project/JC-202505-citibike-tripdata.csv"    
+ [9] "data/Course project/JC-202506-citibike-tripdata.csv"    
+[10] "data/Course project/JC-202507-citibike-tripdata.csv"    
+[11] "data/Course project/JC-202508-citibike-tripdata.csv"    
+[12] "data/Course project/JC-202508-citibike-tripdata.csv.zip"
+[13] "data/Course project/JC-202509-citibike-tripdata.csv"    
+[14] "data/Course project/JC-202510-citibike-tripdata.csv"    </code></pre>
+</div>
+</div>
+<p>These files contain trip-level observations including:</p>
+<p>start station</p>
+<p>end station</p>
+<p>timestamps</p>
+<p>coordinates</p>
+<p>rider type</p>
+<p>For this specific research question, I aggregated the data to compute total annual station ridership and joined it with a dataset identifying the closest bike lane type (“Protected” or “Shared”) for each station.</p>
+</section>
+<section id="data-processing" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="data-processing"><span class="header-section-number">3</span> Data Processing</h2>
+<p>After importing the trip files, I performed the following steps:</p>
+<p>Combined all monthly files into one dataset</p>
+<p>Cleaned column names and formatted timestamps</p>
+<p>Grouped by station to compute total trips per station</p>
+<p>Joined with bike lane infrastructure layer (provided separately)</p>
+<p>Computed summary statistics by closest lane type</p>
+<p>The resulting grouped dataset provides exactly the statistics needed to compare station usage across the two infrastructure types.</p>
+<p>Below is a reproducible version of the summary table used for analysis:</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Click to View Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>lane_summary <span class="ot">&lt;-</span> <span class="fu">tribble</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="sc">~</span>closer_type, <span class="sc">~</span>n_stations, <span class="sc">~</span>mean_trips, <span class="sc">~</span>median_trips, <span class="sc">~</span>sd_trips, <span class="sc">~</span>min_trips, <span class="sc">~</span>q1_trips, <span class="sc">~</span>q3_trips, <span class="sc">~</span>max_trips,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">"Protected"</span>, <span class="dv">489</span>, <span class="fl">47438.6</span>, <span class="dv">43538</span>, <span class="fl">35467.8</span>, <span class="dv">1</span>, <span class="dv">17288</span>, <span class="dv">69099</span>, <span class="dv">186941</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">"Shared"</span>,    <span class="dv">221</span>, <span class="fl">35853.3</span>, <span class="dv">26862</span>, <span class="fl">31435.2</span>, <span class="dv">34</span>, <span class="dv">8529</span>, <span class="dv">57878</span>, <span class="dv">132929</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">clean_names</span>()</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(lane_summary, <span class="at">caption =</span> <span class="st">"Station ridership summary statistics by closest bike lane type."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Station ridership summary statistics by closest bike lane type.</caption>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 9%">
+<col style="width: 10%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">closer_type</th>
+<th style="text-align: right;">n_stations</th>
+<th style="text-align: right;">mean_trips</th>
+<th style="text-align: right;">median_trips</th>
+<th style="text-align: right;">sd_trips</th>
+<th style="text-align: right;">min_trips</th>
+<th style="text-align: right;">q1_trips</th>
+<th style="text-align: right;">q3_trips</th>
+<th style="text-align: right;">max_trips</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Protected</td>
+<td style="text-align: right;">489</td>
+<td style="text-align: right;">47438.6</td>
+<td style="text-align: right;">43538</td>
+<td style="text-align: right;">35467.8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">17288</td>
+<td style="text-align: right;">69099</td>
+<td style="text-align: right;">186941</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Shared</td>
+<td style="text-align: right;">221</td>
+<td style="text-align: right;">35853.3</td>
+<td style="text-align: right;">26862</td>
+<td style="text-align: right;">31435.2</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">8529</td>
+<td style="text-align: right;">57878</td>
+<td style="text-align: right;">132929</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="visualization-of-ridership-differences" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="visualization-of-ridership-differences"><span class="header-section-number">4</span> Visualization of Ridership Differences</h2>
+<p>To recreate the boxplot shown in the project slide deck, I used geom_boxplot(stat = “identity”) with the five-number summaries for each group.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Click to View Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>box_df <span class="ot">&lt;-</span> lane_summary <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">transmute</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>closer_type,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">ymin   =</span> min_trips,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">lower  =</span> q1_trips,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="at">middle =</span> median_trips,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="at">upper  =</span> q3_trips,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="at">ymax   =</span> max_trips</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>box_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 6
+  closer_type  ymin lower middle upper   ymax
+  &lt;chr&gt;       &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+1 Protected       1 17288  43538 69099 186941
+2 Shared         34  8529  26862 57878 132929</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Click to View Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(box_df, <span class="fu">aes</span>(<span class="at">x =</span> closer_type, <span class="at">fill =</span> closer_type)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_boxplot</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">aes</span>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">ymin =</span> ymin,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">lower =</span> lower,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">middle =</span> middle,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">upper =</span> upper,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">ymax =</span> ymax</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="at">stat =</span> <span class="st">"identity"</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="at">alpha =</span> <span class="fl">0.75</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="at">color =</span> <span class="st">"black"</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_y_log10</span>(<span class="at">labels =</span> comma) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Protected"</span> <span class="ot">=</span> <span class="st">"#F8766D"</span>, <span class="st">"Shared"</span> <span class="ot">=</span> <span class="st">"#00BFC4"</span>)) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="at">title =</span> <span class="st">"Station Ridership by Closest Bike Lane Type"</span>,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="at">x =</span> <span class="st">"Lane Type"</span>,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> <span class="st">"Total Trips (log scale)"</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">14</span>) <span class="sc">+</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="individual_report_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="results" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="results"><span class="header-section-number">5</span> Results</h2>
+<section id="mean-median-and-distributional-differences" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="mean-median-and-distributional-differences"><span class="header-section-number">5.1</span> Mean, Median, and Distributional Differences</h3>
+<p>The summary statistics show a consistent pattern:</p>
+<p>Higher average ridership at protected-lane stations</p>
+<p>47.4k vs 35.9k</p>
+<p>Higher median ridership for protected-lane stations</p>
+<p>43.5k vs 26.9k</p>
+<p>Higher upper quartile (Q3)</p>
+<p>69.1k vs 57.9k</p>
+<p>To quantify differences:</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Click to View Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>comparison <span class="ot">&lt;-</span> lane_summary <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(closer_type, mean_trips, median_trips, q1_trips, q3_trips) <span class="sc">|&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_longer</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">cols =</span> <span class="sc">-</span>closer_type,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="at">names_to =</span> <span class="st">"stat"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="at">values_to =</span> <span class="st">"value"</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> closer_type, <span class="at">values_from =</span> value) <span class="sc">|&gt;</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="at">difference =</span> Protected <span class="sc">-</span> Shared,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="at">ratio =</span> <span class="fu">round</span>(Protected <span class="sc">/</span> Shared, <span class="dv">2</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(comparison, <span class="at">caption =</span> <span class="st">"Comparison of key ridership statistics."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Comparison of key ridership statistics.</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">stat</th>
+<th style="text-align: right;">Protected</th>
+<th style="text-align: right;">Shared</th>
+<th style="text-align: right;">difference</th>
+<th style="text-align: right;">ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">mean_trips</td>
+<td style="text-align: right;">47438.6</td>
+<td style="text-align: right;">35853.3</td>
+<td style="text-align: right;">11585.3</td>
+<td style="text-align: right;">1.32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">median_trips</td>
+<td style="text-align: right;">43538.0</td>
+<td style="text-align: right;">26862.0</td>
+<td style="text-align: right;">16676.0</td>
+<td style="text-align: right;">1.62</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">q1_trips</td>
+<td style="text-align: right;">17288.0</td>
+<td style="text-align: right;">8529.0</td>
+<td style="text-align: right;">8759.0</td>
+<td style="text-align: right;">2.03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">q3_trips</td>
+<td style="text-align: right;">69099.0</td>
+<td style="text-align: right;">57878.0</td>
+<td style="text-align: right;">11221.0</td>
+<td style="text-align: right;">1.19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Interpretation of the differences</p>
+<p>The mean ridership at protected-lane stations is 32% higher.</p>
+<p>The median ridership is 62% higher.</p>
+<p>Even at the lower end (Q1), protected-lane stations perform substantially better.</p>
+<p>At every major point in the distribution, the protected-lane stations outperform shared-lane stations.</p>
+<p>This means the effect is not driven by a few extreme values — the entire distribution shifts upward.</p>
+</section>
+<section id="summary-of-findings" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="summary-of-findings"><span class="header-section-number">5.2</span> Summary of Findings</h3>
+<p>After processing the Citi Bike trip data and aggregating trips at the station level, clear differences emerged between stations located near protected bike lanes and those nearest to shared bike lanes. Across all major statistical summaries—mean, median, and quartile values—the protected-lane stations consistently exhibited substantially higher ridership.</p>
+<p>At the aggregate level, protected-lane stations recorded an average of 47,439 total annual trips, compared to 35,853 for shared-lane stations. This represents an increase of approximately 32% in mean usage. While means can be affected by extreme values, the median difference is even more compelling: stations near protected lanes had a median of 43,538 trips, versus 26,862 for shared-lane stations—a 62% increase. Since the median is more robust to outliers, this strongly suggests that the typical station near a protected lane experiences far greater usage.</p>
+<p>Additional insight comes from examining the interquartile range (IQR). Protected-lane stations showed a Q1 of 17,288 and a Q3 of 69,099, while shared-lane stations ranged from 8,529 to 57,878. This means that even lower-performing protected-lane stations outperform their shared-lane counterparts. The IQR reflects the “middle” 50% of observations, so this shift demonstrates that the difference is not isolated to extreme values — the entire distribution of station ridership shifts upward for protected-lane locations.</p>
+<p>The maximum values also differ significantly (186,941 vs.&nbsp;132,929), reinforcing the strength of high-demand stations in protected-lane areas. Although maximums alone cannot be used to generalize trends, they support the overall pattern: protected-lane stations appear to operate in environments of stronger cycling demand.</p>
+</section>
+<section id="visual-interpretation-of-results" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="visual-interpretation-of-results"><span class="header-section-number">5.3</span> Visual Interpretation of Results</h3>
+<p>The visual evidence aligns with the statistical findings. The recreated boxplot — using the five-number summary for each lane type — shows the protected-lane distribution consistently higher across all quartiles. The log-scaled y-axis allows clear comparison of the distributions without distortion. The median line for protected stations is visually higher, their upper quartile reaches higher trip counts, and the entire box is positioned above the shared-lane box.</p>
+<p>What is especially notable is the reduction in overlap between the two boxes. If the distributions were similar, the boxes would overlap heavily, and medians might be close. Instead, the protected-lane box is both more elevated and more elongated, indicating both higher typical ridership and more variation among high-usage stations. Shared-lane stations appear more compressed within a lower band, reflecting more modest ridership levels.</p>
+<p>From both numeric and graphical perspectives, the conclusion is consistent: protected-lane stations demonstrate substantially higher ridership across the distribution.</p>
+<p>##Discussion</p>
+<p>The analysis reveals a clear and consistent relationship between the type of nearby bicycle infrastructure and station-level ridership. This section discusses potential interpretations of this pattern, real-world implications, the role of transportation planning, and considerations for further research.</p>
+</section>
+<section id="why-protected-lanes-may-increase-ridership" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="why-protected-lanes-may-increase-ridership"><span class="header-section-number">5.4</span> Why Protected Lanes May Increase Ridership</h3>
+<p>One of the most plausible explanations for the higher ridership observed near protected bike lanes is the increased sense of safety and comfort they provide. Protected lanes typically include physical barriers — such as bollards, curbs, planters, or parked cars — that separate cyclists from motor vehicle traffic. This separation has been shown in other urban cycling studies to significantly improve perceived and actual safety for riders.</p>
+<p>Perception of safety is one of the strongest determinants of cycling behavior. Many potential riders, particularly casual or occasional cyclists, may feel uncomfortable biking in mixed-traffic environments. Shared lanes often rely on painted markings or signage, which do little to reduce interaction with fast-moving vehicles. In contrast, protected lanes minimize these conflicts, making the cycling experience more predictable, stable, and user-friendly.</p>
+<p>Additionally, protected lanes tend to operate as backbones of larger cycling networks. They are frequently installed in high-priority corridors where city planners anticipate — or seek to create — substantial cycling demand. Because many bike-share riders rely on predictable, coherent routes, the presence of safer infrastructure near stations may encourage both trip initiation and trip termination at those stations.</p>
+<p>6.2 Influence of Urban Design and Land Use</p>
+<p>Another factor that may help explain the observed difference in ridership is the relationship between infrastructure investment and surrounding land use. Protected lanes are often built in dense, mixed-use neighborhoods with high transit accessibility, strong employment clusters, and active street life. Areas that justify the cost of high-quality bike infrastructure typically already demonstrate strong mobility demand.</p>
+<p>Thus, bike-share station ridership is influenced not only by the presence of a protected lane but also by the broader built environment: residential density, job density, schools, transit hubs, retail corridors, and tourist destinations. These elements can generate thousands of short-distance trips that bike-share systems are ideal for capturing.</p>
+<p>Even if some of the difference in ridership between protected and shared lanes is influenced by land-use context, the infrastructure remains a key component of supporting multimodal transportation. Protected lanes not only respond to existing demand but also shape new patterns of mobility by enabling more people to feel comfortable cycling.</p>
+</section>
+<section id="behavior-of-experienced-vs.-inexperienced-riders" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="behavior-of-experienced-vs.-inexperienced-riders"><span class="header-section-number">5.5</span> Behavior of Experienced vs.&nbsp;Inexperienced Riders</h3>
+<p>Protected bike lanes likely benefit different user groups in different ways. Experienced cyclists may appreciate protected lanes but may still feel comfortable riding in shared lanes. In contrast, inexperienced riders — who likely make up a substantial portion of bike-share users — tend to be far more sensitive to traffic stress. For these riders, the presence of protected infrastructure can be the deciding factor between choosing a bike or selecting another mode of transportation.</p>
+<p>This effect matters because a significant portion of Citi Bike ridership comes from occasional users and visitors, not only regular commuters. For such riders, safety perceptions play an even larger role in their station choices and route preferences.</p>
+<p>6.4 System-Level Implications</p>
+<p>The difference in ridership between station groups has important implications for transportation planners, bike-share operators, and policymakers:</p>
+<p>Demand forecasting: Understanding which stations benefit most from protected infrastructure can help guide station siting and expansion strategies.</p>
+<p>Equity considerations: If protected lanes drive ridership, expanding them into underserved neighborhoods can meaningfully improve mobility access.</p>
+<p>Operational planning: Higher-demand stations require more frequent rebalancing and equipment maintenance; knowing which areas will be more active helps optimize deployment.</p>
+<p>Infrastructure prioritization: Quantitative evidence like this strengthens the case for investing in protected bike lanes as part of an integrated mobility strategy.</p>
+<p>6.5 Directions for Future Analysis</p>
+<p>While this analysis provides strong descriptive insights, there are opportunities for deeper exploration:</p>
+<p>Modeling the relationship between station ridership and built environment variables</p>
+<p>Examining temporal patterns (e.g., weekday vs.&nbsp;weekend, commuter peaks)</p>
+<p>Evaluating how new protected lanes affect ridership before/after installation</p>
+<p>Mapping spatial clusters of high-ridership protected-lane stations</p>
+<p>Conducting route-level analysis to understand how protected lanes influence path choice</p>
+<p>Ultimately, protected infrastructure appears to be a meaningful factor in determining bike-share usage. Continued research can help clarify the full extent of its impact and guide effective investment in sustainable mobility.</p>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">6</span> Conclusion</h2>
+<p>This project set out to answer one central question:</p>
+<p>Is station ridership higher near protected bike lanes than near shared lanes?</p>
+<p>Based on aggregated Citi Bike trip totals, the answer is clear: yes. Stations located closest to protected bike lanes consistently demonstrate substantially higher ridership across all major measures of central tendency and distribution.</p>
+<p>Protected-lane stations recorded approximately 32% higher mean ridership and 62% higher median ridership compared to shared-lane stations. The differences in first and third quartiles further confirm that this pattern holds across the bulk of the distribution — not just at its extremes. Visually, the log-scaled boxplot shows the entire protected-lane distribution shifted upward.</p>
+<p>These results align strongly with established transportation research that shows riders prefer physically separated cycling environments. By reducing exposure to traffic stress, protected lanes make cycling more comfortable and more accessible, especially for beginners, tourists, and occasional riders — all major categories of bike-share users.</p>
+<p>The implications extend beyond the comparison itself. Higher ridership at protected-lane stations suggests that infrastructure plays a central role in shaping mobility behavior. Protected lanes appear not only to respond to existing demand but also to induce additional demand by creating safe, attractive corridors for cycling. For cities looking to expand bike-share usage, reduce congestion, or achieve sustainability goals, this evidence strongly supports investing in high-quality cycling infrastructure.</p>
+<p>In short, this analysis demonstrates that protected bike lanes are a powerful tool for boosting bike-share ridership. They create safer and more appealing travel environments, encourage higher usage at nearby stations, and contribute to a more vibrant and sustainable transportation network. As cities continue to rethink transportation and prioritize multimodal mobility, expanding protected bike lane networks represents an effective and data-supported strategy for increasing bike-share participation and improving urban accessibility.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/Talha-Zaheer1\.github\.io\/STA9750-2025-FALL\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
